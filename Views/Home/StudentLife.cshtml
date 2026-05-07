@@ -1,0 +1,413 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Students Life - ../College Bootstrap Template</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <!-- Favicons -->
+    <link href="../College/assets/img/favicon.png" rel="icon"><a href="c:\users\melisa\source\repos\kampusum\views\events\delete.cshtml">c:\users\melisa\source\repos\kampusum\views\events\delete.cshtml</a>
+    <link href="../College/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="../College/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../College/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="../College/assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="../College/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="../College/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+    <!-- Main CSS File -->
+    <link href="../College/assets/css/main.css" rel="stylesheet">
+
+    <!-- =======================================================
+    * Template Name: ../College
+    * Template URL: https://bootstrapmade.com/../College-bootstrap-education-template/
+    * Updated: Jun 19 2025 with Bootstrap v5.3.6
+    * Author: BootstrapMade.com
+    * License: https://bootstrapmade.com/license/
+    ======================================================== -->
+</head>
+
+<body class="students-life-page">
+
+    <header id="header" class="header d-flex align-items-center sticky-top">
+        <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-end">
+
+            <a href="../Home/StudentLife" class="logo d-flex align-items-center me-auto" style="
+    display: inline-block;
+    background-color: #004466;
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 6px;
+    font-family: Arial, sans-serif;
+    font-weight: 500;
+">
+                <!-- Eğer logoyu da göstermek istersen -->
+                <!-- <img src="../College/assets/img/logo.webp" alt="" style="height: 30px; margin-right: 10px;"> -->
+                Kampüsüm
+            </a>
+            <nav id="navmenu" class="navmenu">
+                <ul>
+                    <li><a href="../Home/Starter" class="active">Ana Sayfa</a></li>
+                    <li><a href="../Events/Index">Etkinlikler</a></li>
+                    <li><a href="../Announcement/Announcement">Duyurular</a></li>
+                    <li><a href="../Faculty/Index">Kampüs</a></li>
+                    <li><a href="../Home/StudentLife">Öğrenci Hayatı</a></li>
+                    <li><a href="../Home/Contact">İletişime Geç</a></li>
+                    <li class="dropdown">
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <a href="#"><span>@User.Identity.Name</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                            <ul>
+                                <li>
+                                    <form action="/Login/Logout" method="post" style="display:inline;">
+                                        @Html.AntiForgeryToken()
+                                        <button type="submit" style="color: red; border: none; background: none; cursor: pointer;">
+                                            Çıkış Yap
+                                        </button>
+                                    </form>
+                                </li>
+                            </ul>
+                        }
+                        else
+                        {
+                            <a href="#"><span>Profil</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                            <ul>
+                                <li><a href="/Login/Login" style="padding-left: 5px; margin-left: 2px;">Giriş Yap</a></li>
+                            </ul>
+                        }
+                    </li>
+                </ul>
+                <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+
+        <!-- Page Title -->
+        <div class="page-title light-background">
+            <div class="container d-lg-flex justify-content-between align-items-center">
+                <h1 class="mb-2 mb-lg-0">Student Life</h1>
+                <nav class="breadcrumbs">
+                    <ol>
+                        <li><a href="index.html">Home</a></li>
+                        <li class="current">Students Life</li>
+                    </ol>
+                </nav>
+            </div>
+        </div><!-- End Page Title -->
+        <!-- Students Life Section -->
+        <section id="students-life" class="students-life section">
+
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+                <div class="row">
+                    <div class="col-lg-6 d-flex align-items-center" data-aos="fade-right" data-aos-delay="200">
+                        <style>
+                            .custom-img {
+                                width: 100%;
+                                max-width: 1000px; /* İstersen 1200px, 1400px yapabilirsin */
+                                height: auto;
+                                display: block;
+                                margin: 20px auto; /* Ortalar ve biraz boşluk bırakır */
+                                border-radius: 12px; /* Yuvarlatma efekti devam eder */
+                            }
+                        </style>
+
+                        <img src="../College/assets/img/education/inönükampüs.jpg"
+                             class="img-fluid custom-img"
+                             alt="Campus Life">
+                    </div>
+                    <div class="col-lg-6" data-aos="fade-left" data-aos-delay="300">
+                        <div class="student-life-intro">
+                            <h3>KAMPÜSÜMÜZ</h3>
+                            <p>
+                                İnönü Üniversitesi kampüsü; doğayla iç içe, modern yapıları, sosyal alanları ve öğrenci dostu ortamıyla öğrenmenin ötesinde bir yaşam sunar.
+                                Yemyeşil alanları, geniş kütüphanesi, araştırma merkezleri ve sosyal etkinlikleriyle sadece bir eğitim alanı değil; aynı zamanda keşfetmenin, üretmenin ve paylaşmanın merkezidir. Burada her köşe yeni bir ilham, her adım geleceğe atılan bir adımdır.
+                            </p>
+                            <div class="mt-4">
+                                <a href="../Faculty/Index" class="btn btn-outline-primary">Kampüsü Keşfet</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+               
+
+                <div class="athletics-programs mt-5 pt-3" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="text-center mb-4">Geleneksel Etkinlikler</h3>
+
+                    <div class="athletics-slider swiper init-swiper" data-aos="fade-up" data-aos-delay="300">
+                        <script type="application/json" class="swiper-config">
+                            {
+                              "loop": true,
+                              "speed": 600,
+                              "autoplay": {
+                                "delay": 5000
+                              },
+                              "slidesPerView": 1,
+                              "spaceBetween": 30,
+                              "pagination": {
+                                "el": ".swiper-pagination",
+                                "type": "bullets",
+                                "clickable": true
+                              },
+                              "breakpoints": {
+                                "768": {
+                                  "slidesPerView": 2
+                                },
+                                "992": {
+                                  "slidesPerView": 3
+                                }
+                              }
+                            }
+                        </script>
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="athletics-card">
+                                    <img src="../College/assets/img/education/köyokuluprojesi.jpg" class="img-fluid" loading="lazy" alt="Swimming">
+                                    <div class="athletics-content">
+                                        <h5>Köy Okulu Projesi</h5>
+                                        <p>Geleneksel köy okulu projesi kapsamında kütüphane kuruldu.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="athletics-card">
+                                    <img src="../College/assets/img/education/aşuregünü.jpg" class="img-fluid" loading="lazy" alt="Basketball">
+                                    <div class="athletics-content">
+                                        <h5>Aşure Günü</h5>
+                                        <p>Her yıl geleneksel olarak düzenlenen aşure etkinliği.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="athletics-card">
+                                    <img src="../College/assets/img/education/konser.jpg" class="img-fluid" loading="lazy" alt="Soccer">
+                                    <div class="athletics-content">
+                                        <h5>Konser</h5>
+                                        <p>nönü Üniversitesi 50. Yıl Etkinlikleri kapsamında düzenlenen “Beyzadeler Konseri” .</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="athletics-card">
+                                    <img src="../College/assets/img/education/yazsporu.jpg" class="img-fluid" loading="lazy" alt="Tennis">
+                                    <div class="athletics-content">
+                                        <h5>Yaz Sporları</h5>
+                                        <p>İnönü Üniversitesi yaz sporları.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+
+                <div class="campus-facilities mt-5 pt-3" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="text-center mb-4">Kampüs Olanakları</h3>
+
+                    <div class="row g-4">
+                        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                            <div class="facility-card">
+                                <img src="../College/assets/img/education/takımlar.jpg" class="img-fluid" alt="Housing">
+                                <div class="facility-info">
+                                    <h5>Takımlarımız</h5>
+                                    <p>Üniversitemiz, Türkiye Üniversite Sporları Federasyonunun düzenlediği müsabakalarda 25 farklı branşta kadın ve erkek kategorilerinde yer almaktadır.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                            <div class="facility-card">
+                                <img src="../College/assets/img/education/festival.jpg" class="img-fluid" alt="Dining">
+                                <div class="facility-info">
+                                    <h5>Festival</h5>
+                                    <p>Üniversitemizde her yıl ulusal ve uluslararası düzeyde sinema, kısa film, tiyatro, bahar şenlikleri vb. etkinlikleri içeren festivaller organize edilmektedir.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                            <div class="facility-card">
+                                <img src="../College/assets/img/education/psikolojik.PNG" class="img-fluid" alt="Library">
+                                <div class="facility-info">
+                                    <h5>Psikolojik Danışma ve Rehberlik</h5>
+                                    <p>Kampüs bünyesinde  öğrenci ve personellerimizin hayatlarında yaşadığı sorunları çözmeleri ya da hedeflerine yön vermelerine yardımcı olmak adına "Psikolojik Danışma ve Rehberlik" hizmetleri verilmektedir.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+                            <div class="facility-card">
+                                <img src="../College/assets/img/education/ulaşım.png" class="img-fluid" alt="Recreation">
+                                <div class="facility-info">
+                                    <h5> Ulaşım</h5>
+                                    <p>Kampüs içerisinde ulaşım hizmetleri, elektrikli trambüsler ve özel halk otobüsleri ile ders saatleri ve öğrenci yoğunluğuna göre 5 dakikada bir sefer düzenlenmektedir.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+
+                <div class="student-gallery mt-5 pt-3" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="text-center mb-4">  Öğrenci Yaşam Galerisi </h3>
+
+                    <div class="row g-3">
+                        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+                            <a href="../College/assets/img/education/students-1.webp" class="gallery-item glightbox">
+                                <img src="../College/assets/img/education/bisiklet.jpg" class="img-fluid" loading="lazy" alt="Student Life">
+                                <div class="gallery-overlay">
+                                    <i class="bi bi-plus-circle"></i>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+                            <a href="../College/assets/img/education/students-2.webp" class="gallery-item glightbox">
+                                <img src="../College/assets/img/education/kampüsteöğrenciler.jpg" class="img-fluid" loading="lazy" alt="Student Life">
+                                <div class="gallery-overlay">
+                                    <i class="bi bi-plus-circle"></i>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="300">
+                            <a href="../College/assets/img/education/yemek.jpg" class="gallery-item glightbox">
+                                <img src="../College/assets/img/education/öğrenci.jpg" class="img-fluid" loading="lazy" alt="Student Life">
+                                <div class="gallery-overlay">
+                                    <i class="bi bi-plus-circle"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section><!-- /Students Life Section -->
+
+    </main>
+
+
+
+    <footer id="footer" class="footer position-relative light-background">
+
+        <div class="container footer-top">
+            <div class="row gy-4">
+                <div class="col-lg-2 col-md-3 footer-about">
+                    <h4> Kampüsümüz</h4>
+                    <p>
+                        İnönü Üniversitesi, Merkez Yerleşke<br />
+                        Elazığ Yolu 10. Km, 44280 <br />
+                        Malatya / Türkiye
+                    </p>
+                    <a href="mailto:genelsekreterlik@inonu.edu.tr?subject=Bilgi">E-Posta Gönder</a>
+                    <p>📞 <a href="tel:+904223770000">0422 377 0000</a></p>
+
+
+                </div>
+
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <h4>Genel Üniversite Bilgileri</h4>
+                    <ul>
+                        <li><a href="https://www.inonu.edu.tr/">İnönü Üniversitesi Resmî Web Sitesi</a></li>
+                        <li><a href="https://www.inonu.edu.tr/tanitim">İnönü Üniversitesi Tanıtım Sayfası</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <h4>Kampüs Olanakları ve Yaşam</h4>
+                    <ul>
+                        <li><a href="https://totm.inonu.edu.tr/">Turgut Özal Tıp Merkezi</a></li>
+                        <li><a href="https://kutuphane.inonu.edu.tr">Kütüphane ve Dokümantasyon Daire Başkanlığı</a></li>
+                        <li><a href="https://www.inonu.edu.tr/spor.sube">Spor Hizmetleri ve Tesisleri</a></li>
+                        <li><a href="https://harita.inonu.edu.tr">Kampüs Ulaşım ve Harita</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <h4>Öğrenci Bilgi ve Destek Sistemleri</h4>
+                    <ul>
+                        <li><a href="https://obs.inonu.edu.tr">OBS – Öğrenci Bilgi Sistemi</a></li>
+                        <li><a href="https://www.inonu.edu.tr/inuzem">UZEM – Uzaktan Eğitim Merkezi</a></li>
+                        <li><a href="https://ebys.inonu.edu.tr">EBYS – Elektronik Belge Yönetim Sistemi</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <h4> Sosyal ve Kültürel Hayat</h4>
+                    <ul>
+                        <li><a href="https://www.inonu.edu.tr/">Kültür ve Sosyal İşler Daire Başkanlığı</a></li>
+                        <li><a href="https://www.malatyateknokent.com.tr/">Teknokent & Girişimcilik</a></li>
+                        <li><a href="https://ogrencitopluluklari.inonu.edu.tr/Community/Detail/153d3411-c27c-467a-aca6-20dd290dbabb?utm_source=chatgpt.com">Gönüllülük ve Toplumsal Katkı Merkezi</a></li>
+                    </ul>
+                </div>
+
+                <div class="social-links d-flex mt-4">
+                    <a href="http://x.com/inukurumsal"><i class="bi bi-twitter-x"></i></a>
+                    <a href="https://www.facebook.com/inukurumsal"><i class="bi bi-facebook"></i></a>
+                    <a href="https://www.instagram.com/inukurumsal/"><i class="bi bi-instagram"></i></a>
+                    <a href="https://www.linkedin.com/school/inukurumsal/"><i class="bi bi-linkedin"></i></a>
+                    <a href="https://www.youtube.com/inukurumsal"><i class="bi bi-youtube"></i><
+                </div>
+
+            </div>
+        </div>
+
+
+
+        <div class="container copyright text-center mt-4">
+            <p>© <span>Copyright</span> <strong class="px-1 sitename">MyWebsite</strong> <span>All Rights Reserved</span></p>
+            <div class="credits">
+                <!-- All the links in the footer should remain intact. -->
+                <!-- You can delete the links only if you've purchased the pro version. -->
+                <!-- Licensing information: https://bootstrapmade.com/license/ -->
+                <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            </div>
+        </div>
+
+    </footer>
+
+
+
+
+
+    <!-- Scroll Top -->
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Preloader -->
+    <div id="preloader"></div>
+
+    <!-- Vendor JS Files -->
+    <script src="../College/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../College/assets/vendor/php-email-form/validate.js"></script>
+    <script src="../College/assets/vendor/aos/aos.js"></script>
+    <script src="../College/assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="../College/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="../College/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="../College/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="../College/assets/vendor/glightbox/js/glightbox.min.js"></script>
+
+    <!-- Main JS File -->
+    <script src="../College/assets/js/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="wwwroot\AdminTheme\AdminTheme\**" />
+    <Content Remove="wwwroot\AdminTheme\AdminTheme\**" />
+    <EmbeddedResource Remove="wwwroot\AdminTheme\AdminTheme\**" />
+    <None Remove="wwwroot\AdminTheme\AdminTheme\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Controllers\Contact.cs" />
+    <Compile Remove="Controllers\NewsController..cs" />
+    <Compile Remove="Models\ContactMessagecs.cs" />
+    <Compile Remove="Views\List.cshtml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Controllers\Contact.razor" />
+    <Content Remove="Views\List.cshtml" />
+    <Content Remove="wwwroot\College\assets\img\blog\blog-post-3.webp" />
+    <Content Remove="wwwroot\College\assets\img\blog\klinik.htm" />
+    <Content Remove="wwwroot\College\assets\img\education\activities-1.webp" />
+    <Content Remove="wwwroot\College\assets\img\education\arapgiryurdu" />
+    <Content Remove="wwwroot\College\assets\img\education\arapgiryurt.htm" />
+    <Content Remove="wwwroot\College\assets\img\education\campus-10.webp" />
+    <Content Remove="wwwroot\College\assets\img\education\campus-11.webp" />
+    <Content Remove="wwwroot\College\assets\img\education\campus-2.webp" />
+    <Content Remove="wwwroot\College\assets\img\education\campus-5.webp" />
+    <Content Remove="wwwroot\College\assets\img\education\fen-edebiyatfak.htm" />
+    <Content Remove="wwwroot\College\assets\img\education\kampüste öğrenciler.jpg" />
+    <Content Remove="wwwroot\College\assets\img\education\sağlıkyüskekokulu.jpg" />
+    <Content Remove="wwwroot\College\assets\img\education\showcase-6.webp" />
+    <Content Remove="wwwroot\College\assets\img\education\students-1.webp" />
+    <Content Remove="wwwroot\College\assets\img\education\students-2.webp" />
+    <Content Remove="wwwroot\College\assets\img\education\students-3.webp" />
+    <Content Remove="wwwroot\College\assets\img\education\students-4.webp" />
+    <Content Remove="wwwroot\College\assets\img\education\students-5.webp" />
+    <Content Remove="wwwroot\College\assets\img\education\students-6.webp" />
+    <Content Remove="wwwroot\College\assets\img\person\imgres %281%29.htm" />
+    <Content Remove="wwwroot\College\assets\img\person\indirperson-f-12.webp" />
+    <Content Remove="wwwroot\College\assets\img\person\klinik.htm" />
+    <Content Remove="wwwroot\College\assets\img\person\klinik.webp" />
+    <Content Remove="wwwroot\College\assets\img\person\person-m-10.webp" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\AdminTheme\.DS_Store" />
+    <None Include="wwwroot\AdminTheme\PSD\.DS_Store" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.7">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.7" />
+  </ItemGroup>
+
+</Project>

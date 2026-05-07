@@ -1,0 +1,359 @@
+﻿@model Kampusum.Models.ContactMessage
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Contact - College Bootstrap Template</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <!-- Favicons -->
+    <link href="../College/assets/img/favicon.png" rel="icon">
+    <link href="../College/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="../College/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../College/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="../College/assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="../College/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="../College/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+    <!-- Main CSS File -->
+    <link href="../College/assets/css/main.css" rel="stylesheet">
+
+    <!-- =======================================================
+    * Template Name: College
+    * Template URL: https://bootstrapmade.com/college-bootstrap-education-template/
+    * Updated: Jun 19 2025 with Bootstrap v5.3.6
+    * Author: BootstrapMade.com
+    * License: https://bootstrapmade.com/license/
+    ======================================================== -->
+</head>
+
+<body class="contact-page">
+
+    <header id="header" class="header d-flex align-items-center sticky-top">
+        <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-end">
+            <a href="../Home/Contact" class="logo d-flex align-items-center me-auto" style="
+    display: inline-block;
+    background-color: #004466;
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 6px;
+    font-family: Arial, sans-serif;
+    font-weight: 500;
+">
+                <!-- Eğer logoyu da göstermek istersen -->
+                <!-- <img src="../College/assets/img/logo.webp" alt="" style="height: 30px; margin-right: 10px;"> -->
+                Kampüsüm
+            </a>
+            <nav id="navmenu" class="navmenu">
+                <ul>
+                    <li><a href="../Home/Starter" class="active">Ana Sayfa</a></li>
+                    <li><a href="../Events/Index">Etkinlikler</a></li>
+                    <li><a href="../Announcement/Announcement">Duyurular</a></li>
+                    <li><a href="../Faculty/Index">Kampüs</a></li>
+                    <li><a href="../Home/StudentLife">Öğrenci Hayatı</a></li>
+                    <li><a href="../Home/Contact">İletişime Geç</a></li>
+                    <li class="dropdown">
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <a href="#"><span>@User.Identity.Name</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                            <ul>
+                                <li>
+                                    <form action="/Login/Logout" method="post" style="display:inline;">
+                                        @Html.AntiForgeryToken()
+                                        <button type="submit" style="color: red; border: none; background: none; cursor: pointer;">
+                                            Çıkış Yap
+                                        </button>
+                                    </form>
+                                </li>
+                            </ul>
+                        }
+                        else
+                        {
+                            <a href="#"><span>Profil</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                            <ul>
+                                <li><a href="/Login/Login" style="padding-left: 5px; margin-left: 2px;">Giriş Yap</a></li>
+                            </ul>
+                        }
+                    </li>
+                </ul>
+                <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+
+        <!-- Page Title -->
+        <div class="page-title light-background">
+            <div class="container d-lg-flex justify-content-between align-items-center">
+                <h1 class="mb-2 mb-lg-0">İletişime Geç</h1>
+                <nav class="breadcrumbs">
+                    <ol>
+                        <li class="current">İletişime Geç</li>
+                    </ol>
+                </nav>
+            </div>
+        </div><!-- End Page Title -->
+        <!-- Contact Section -->
+        <section id="contact" class="contact section">
+
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+                <div class="contact-main-wrapper">
+                    <div class="map-wrapper">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d8683.412272838754!2d38.43499834207601!3d38.33199888814358!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4076384f5ef99bf1%3A0xb34b0d7f20c9a9f!2zw5xuaXZlcnNpdGUsIMSwbsO2bsO8IMOcbnYuLCBCYXR0YWxnYXppL01hbGF0eWE!5e0!3m2!1str!2str!4v1752177267352!5m2!1str!2str"
+                                width="650"
+                                height="780"
+                                style="border:0;"
+                                allowfullscreen=""
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+
+                    <div class="contact-content">
+                        <div class="contact-cards-container" data-aos="fade-up" data-aos-delay="300">
+                            <div class="contact-card">
+                                <div class="icon-box">
+                                    <i class="bi bi-geo-alt"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <h4>Konum</h4>
+                                    <p><strong>Adres:</strong> Üniversite, Malatya Elazığ Yolu 10.KM No:44210, 44000 Battalgazi/Malatya</p>
+
+                                    @* <button id="btnRoute" style="padding:10px 15px; background:#4285F4; color:#fff; border:none; border-radius:5px; cursor:pointer;">
+                                        📍 Yol Tarifi Al
+                                    </button>
+
+                                    <script>
+                                        document.getElementById('btnRoute').addEventListener('click', function() {
+                                          if (navigator.geolocation) {
+                                            navigator.geolocation.getCurrentPosition(
+                                              function(position) {
+                                                const lat = position.coords.latitude;
+                                                const lng = position.coords.longitude;
+                                                const destination = encodeURIComponent('İnönü Üniversitesi, Malatya Elazığ Yolu 10.KM No:44210, 44000 Battalgazi/Malatya');
+
+                                                const mapsUrl = https://www.google.com/maps/dir/?api=1&origin=${lat},${lng}&destination=${destination}&travelmode=driving;
+
+                                                window.open(mapsUrl, '_blank');
+                                              },
+                                              function(error) {
+                                                alert('Konum alınamadı. Lütfen tarayıcı konum izinlerinizi kontrol edin.');
+                                              },
+                                              { timeout: 10000 }  // 10 saniye içinde cevap gelmezse hata verir
+                                            );
+                                          } else {
+                                            alert('Tarayıcınız konum hizmetini desteklemiyor.');
+                                          }
+                                        });
+                                    </script>
+ *@
+                                </div>
+                            </div>
+
+                            <div class="contact-card">
+                                <div class="icon-box">
+                                    <i class="bi bi-envelope"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <h4>Email Adresi : <h6> genelsekreterlik@inonu.edu.tr </h6> </h4>
+                                    <a href="mailto:genelsekreterlik@inonu.edu.tr?subject=Bilgi">E-Posta Gönder</a>
+                                </div>
+                            </div>
+
+                            <div class="contact-card">
+                                <div class="icon-box">
+                                    <i class="bi bi-telephone"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <h4>Telefon</h4>
+                                    <p>📞 <a href="tel:+904223770000">0422 377 0000</a></p>
+                                </div>
+                            </div>
+
+                            <div class="contact-card">
+                                <div class="icon-box">
+                                    <i class="bi bi-clock"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <h4>Açılış Saatleri</h4>
+                                    <p>Pazartesi-Cuma: 8AM - 5PM</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact-form-container" data-aos="fade-up" data-aos-delay="400">
+                            <h3>İLETİŞİM FORMU</h3>
+                            <p>
+                                Lütfen bize iletmek istediğiniz mesajı bu alana yazınız.
+                                Öneri, şikayet, teşekkür, bilgi talebi ya da iletişim amaçlı diğer tüm konular için bu alanı kullanabilirsiniz.
+                            </p>
+
+                            @if (ViewBag.Success != null)
+                            {
+                                <div class="alert alert-success">@ViewBag.Success</div>
+                            }
+                            @if (ViewBag.Error != null)
+                            {
+                                <div class="alert alert-danger">@ViewBag.Error</div>
+                            }
+
+                            <form asp-controller="Home" asp-action="Contact" method="post" class="php-email-form">
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                <div class="row">
+                                    <div class="col-md-6 form-group">
+                                        <input asp-for="Name" class="form-control" placeholder="Ad/Soyad" required />
+                                    </div>
+                                    <div class="col-md-6 form-group mt-3 mt-md-0">
+                                        <input asp-for="Email" class="form-control" placeholder="E-mail" required />
+                                    </div>
+                                </div>
+                                <div class="form-group mt-3">
+                                    <input asp-for="Subject" class="form-control" placeholder="Konu" required />
+                                </div>
+                                <div class="form-group mt-3">
+                                    <textarea asp-for="Message" class="form-control" rows="5" placeholder="Mesaj" required></textarea>
+                                </div>
+
+                                <div class="my-3">
+                                    <div class="loading">Loading</div>
+                                    <div class="error-message"></div>
+                                    <div class="sent-message">Your message has been sent. Thank you!</div>
+                                </div>
+
+                                <div class="form-submit">
+                                    <button type="submit">Mesajı Gönder</button>
+                                    <div class="social-links">
+                                        <a href="http://x.com/inukurumsal"><i class="bi bi-twitter-x"></i></a>
+                                        <a href="https://www.facebook.com/inukurumsal"><i class="bi bi-facebook"></i></a>
+                                        <a href="https://www.instagram.com/inukurumsal/"><i class="bi bi-instagram"></i></a>
+                                        <a href="https://www.linkedin.com/school/inukurumsal/"><i class="bi bi-linkedin"></i></a>
+                                        <a href="https://www.youtube.com/inukurumsal"><i class="bi bi-youtube"></i><
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><!-- /Contact Section -->
+
+    </main>
+
+
+
+    <footer id="footer" class="footer position-relative light-background">
+
+        <div class="container footer-top">
+            <div class="row gy-4">
+                <div class="col-lg-2 col-md-3 footer-about">
+                    <h4> Kampüsümüz</h4>
+                    <p>
+                        İnönü Üniversitesi, Merkez Yerleşke<br />
+                        Elazığ Yolu 10. Km, 44280 <br />
+                        Malatya / Türkiye
+                    </p>
+                    <a href="mailto:genelsekreterlik@inonu.edu.tr?subject=Bilgi">E-Posta Gönder</a>
+                    <p>📞 <a href="tel:+904223770000">0422 377 0000</a></p>
+
+
+                </div>
+
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <h4>Genel Üniversite Bilgileri</h4>
+                    <ul>
+                        <li><a href="https://www.inonu.edu.tr/">İnönü Üniversitesi Resmî Web Sitesi</a></li>
+                        <li><a href="https://www.inonu.edu.tr/tanitim">İnönü Üniversitesi Tanıtım Sayfası</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <h4>Kampüs Olanakları ve Yaşam</h4>
+                    <ul>
+                        <li><a href="https://www.inonu.edu.tr/totm">Turgut Özal Tıp Merkezi</a></li>
+                        <li><a href="https://kutuphane.inonu.edu.tr">Kütüphane ve Dokümantasyon Daire Başkanlığı</a></li>
+                        <li><a href="https://www.inonu.edu.tr/spor.sube">Spor Hizmetleri ve Tesisleri</a></li>
+                        <li><a href="https://harita.inonu.edu.tr">Kampüs Ulaşım ve Harita</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <h4>Öğrenci Bilgi ve Destek Sistemleri</h4>
+                    <ul>
+                        <li><a href="https://obs.inonu.edu.tr">OBS – Öğrenci Bilgi Sistemi</a></li>
+                        <li><a href="https://www.inonu.edu.tr/inuzem">UZEM – Uzaktan Eğitim Merkezi</a></li>
+                        <li><a href="https://ebys.inonu.edu.tr">EBYS – Elektronik Belge Yönetim Sistemi</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <h4> Sosyal ve Kültürel Hayat</h4>
+                    <ul>
+                        <li><a href="https://www.inonu.edu.tr/">Kültür ve Sosyal İşler Daire Başkanlığı</a></li>
+                        <li><a href="https://www.malatyateknokent.com.tr/">Teknokent & Girişimcilik</a></li>
+                        <li><a href="https://ogrencitopluluklari.inonu.edu.tr/Community/Detail/153d3411-c27c-467a-aca6-20dd290dbabb?utm_source=chatgpt.com">Gönüllülük ve Toplumsal Katkı Merkezi</a></li>
+                    </ul>
+                </div>
+
+                <div class="social-links d-flex mt-4">
+                    <a href="http://x.com/inukurumsal"><i class="bi bi-twitter-x"></i></a>
+                    <a href="https://www.facebook.com/inukurumsal"><i class="bi bi-facebook"></i></a>
+                    <a href="https://www.instagram.com/inukurumsal/"><i class="bi bi-instagram"></i></a>
+                    <a href="https://www.linkedin.com/school/inukurumsal/"><i class="bi bi-linkedin"></i></a>
+                    <a href="https://www.youtube.com/inukurumsal"><i class="bi bi-youtube"></i><
+                </div>
+
+            </div>
+        </div>
+
+
+
+        <div class="container copyright text-center mt-4">
+            <p>© <span>Copyright</span> <strong class="px-1 sitename">MyWebsite</strong> <span>All Rights Reserved</span></p>
+            <div class="credits">
+                <!-- All the links in the footer should remain intact. -->
+                <!-- You can delete the links only if you've purchased the pro version. -->
+                <!-- Licensing information: https://bootstrapmade.com/license/ -->
+                <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            </div>
+        </div>
+
+    </footer>
+
+
+
+
+
+    <!-- Scroll Top -->
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Preloader -->
+    <div id="preloader"></div>
+
+    <!-- Vendor JS Files -->
+    <script src="../College/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../College/assets/vendor/aos/aos.js"></script>
+    <script src="../College/assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="../College/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="../College/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="../College/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="../College/assets/vendor/glightbox/js/glightbox.min.js"></script>
+
+    <!-- Main JS File -->
+    <script src="../College/assets/js/main.js"></script>
+
+</body>
+
+</html>

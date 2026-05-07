@@ -1,0 +1,64 @@
+﻿@model News
+@{
+	ViewData["Title"] = "Create";
+	Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+
+<div class="main-panel">
+	<div class="content-wrapper">
+		<div class="page-header">
+			<h3 class="page-title"> Form elements </h3>
+			<nav aria-label="breadcrumb">
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item"><a href="#">Forms</a></li>
+					<li class="breadcrumb-item active" aria-current="page">Form elements</li>
+				</ol>
+			</nav>
+		</div>
+		<div class="row">
+
+
+			<div class="col-12 grid-margin stretch-card">
+				<div class="card">
+					<div class="card-body">
+						<h4 class="card-title">Haber Ekle</h4>
+						<p class="card-description"> Yeni haber ekleyin </p>
+
+						<form asp-action="Create" asp-controller="News" method="post" enctype="multipart/form-data" class="forms-sample">
+							<div class="form-group">
+								<label asp-for="Title">Haber Başlığı</label>
+								<input asp-for="Title" class="form-control" placeholder="Title" />
+							</div>
+
+							<div class="form-group">
+								<label asp-for="Description">Haber Açıklaması</label>
+								<input asp-for="Description" class="form-control" placeholder="Description" />
+							</div>
+
+							<div class="form-group">
+								<label asp-for="ImagePath">Görsel Yolu</label>
+								<input asp-for="ImagePath" class="form-control" placeholder="Image path or URL" />
+							</div>
+
+							<div class="form-group">
+								<label asp-for="Date">Tarih</label>
+								<input asp-for="Date" class="form-control" type="date" />
+							</div>
+
+							<button type="submit" class="btn btn-gradient-primary mr-2">Kaydet</button>
+							<a href="/News/List" class="btn btn-light">Vazgeç</a>
+						</form>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<footer class="footer">
+		<div class="container-fluid clearfix">
+			<span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © bootstrapdash.com 2020</span>
+			<span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Free <a href="https://www.bootstrapdash.com/bootstrap-admin-template/" target="_blank">Bootstrap admin templates </a> from Bootstrapdash.com</span>
+		</div>
+	</footer>
+</div>
